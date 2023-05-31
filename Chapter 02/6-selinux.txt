@@ -1,0 +1,4 @@
+...
+securityContext:
+  seLinuxOptions:
+    level: "{SeLinuxOptions}"

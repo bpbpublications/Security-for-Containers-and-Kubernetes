@@ -1,0 +1,15 @@
+$ cat <<EOF | sudo tee container-conf.json
+{
+  "metadata": {
+      "name": "alpine"
+  },
+  "image":{
+      "image": "alpine"
+  },
+  "command": [
+      "ls"
+  ],
+  "log_path":"busybox.0.log",
+  "linux": {
+  }
+}

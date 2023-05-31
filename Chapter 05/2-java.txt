@@ -1,0 +1,4 @@
+java.lang.ProcessBuilder.Start
+...
+net.rebyond.behinder.paylod.java.Cmd.RunCMD
+net.rebyond.behinder.paylod.java.Cmd.equals

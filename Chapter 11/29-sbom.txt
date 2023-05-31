@@ -1,0 +1,10 @@
+...
+<component type="application" bom-ref="pkg:helm/cli_repo/grafana/grafana/templates/clusterrole.yaml/ClusterRole.default.release-name-grafana-clusterrole@sha1:8faaaaa4208e987a1fe4cf37fc63c5e7b99393ee">
+  <name>ClusterRole.default.release-name-grafana-clusterrole</name>
+  <version>sha1:8faaaaa4208e987a1fe4cf37fc63c5e7b99393ee</version>
+  <hashes>
+    <hash alg="SHA-1">8faaaaa4208e987a1fe4cf37fc63c5e7b99393ee</hash>
+  </hashes>
+  <purl>pkg:helm/cli_repo/grafana/grafana/templates/clusterrole.yaml/ClusterRole.default.release-name-grafana-clusterrole@sha1:8faaaaa4208e987a1fe4cf37fc63c5e7b99393ee</purl>
+</component>
+...

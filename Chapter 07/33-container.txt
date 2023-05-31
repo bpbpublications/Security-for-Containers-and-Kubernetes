@@ -1,0 +1,4 @@
+...
+securityContext:
+  seLinuxOptions:
+    level: "s0:c123,c456"

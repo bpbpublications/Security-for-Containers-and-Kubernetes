@@ -1,0 +1,35 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: network-policy-01
+  namespace: my-namespace
+spec:
+  podSelector:
+    matchLabels:
+      role: mysql
+  policyTypes:
+    - Ingress
+    - Egress
+  ingress:
+    - from:
+        - ipBlock:
+            cidr: 172.11.0.0/16
+            except:
+              - 172.11.2.0/24
+        - namespaceSelector:
+            matchLabels:
+              project: webserver
+        - podSelector:
+            matchLabels:
+              role: http
+      ports:
+        - protocol: TCP
+          port: 3306
+  egress:
+    - to:
+        - ipBlock:
+            cidr: 10.0.1.0/24
+      ports:
+        - protocol: TCP
+          port: 6121
+          endport: 6221

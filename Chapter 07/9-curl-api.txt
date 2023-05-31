@@ -1,0 +1,2 @@
+$ curl -k https://10.96.0.1:443/api
+curl: (28) Failed to connect to 10.96.0.1 port 443 after 75457 ms: Couldn't connect to server

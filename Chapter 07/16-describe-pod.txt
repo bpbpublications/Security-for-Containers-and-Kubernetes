@@ -1,0 +1,1 @@
+$ kubectl describe pod/{kube-apiserver-pod-name} -n kube-system

@@ -1,0 +1,21 @@
+{
+    "aud": [
+    "sts.amazonaws.com"
+    ],
+    "exp": 1675532114,
+    "iat": 1675445714,
+    "iss": "https://oidc.eks.us-east-1.amazonaws.com/id/T34DE27G27A865933133EA00A26FB256",
+    "kubernetes.io": {
+    "namespace": "default",
+    "pod": {
+        "name": "alpine-44b5774646-af911",
+        "uid": "4a20e883-1407-12ia-a75c-0e72b7e4f463"
+        },
+    "serviceaccount": {
+        "name": "s3-read-only",
+        "uid": "b270bb5c-4406-91ea-3898-123b45b60dfg"
+        }
+    },
+    "nbf": 1675445714,
+    "sub": "system:serviceaccount:default:s3-read-only"
+}   

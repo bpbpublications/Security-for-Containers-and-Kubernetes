@@ -1,0 +1,15 @@
+Containers:
+  kube-scheduler:
+    Container ID:  docker://2f0e7db06157c2d9c98bffe23ce942681be808e9084fc994e9f796b1d7d3a211
+    Image:         k8s.gcr.io/kube-scheduler:v1.25.2
+    Image ID:      docker://sha256:873dc124ec692aa7dae4f3b1b41898c8bda1ef989c08823dbf183286155d0eed
+    Port:          <none>
+    Host Port:     <none>
+    Command:
+      kube-scheduler
+      --authentication-kubeconfig=/etc/kubernetes/scheduler.conf
+      --authorization-kubeconfig=/etc/kubernetes/scheduler.conf
+      --bind-address=127.0.0.1
+      --kubeconfig=/etc/kubernetes/scheduler.conf
+      --leader-elect=true
+      --feature-gates=AppArmor=true

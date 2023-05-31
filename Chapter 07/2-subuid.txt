@@ -1,0 +1,5 @@
+$ cat /etc/subuid
+luigi:100000:65536
+$ cat /etc/subgid
+luigi:100000:65536
+$ sudo apt-get install -y uidmap

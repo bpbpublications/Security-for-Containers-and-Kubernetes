@@ -1,0 +1,33 @@
+listeners:
+...
+  filter_chains:
+  - transport_socket:
+      name: envoy.transport_sockets.tls
+      typed_config:
+        "@type": type.googleapis.com/envoy.extensions.transport_sockets.tls.v3.DownstreamTlsContext
+        common_tls_context:
+          tls_certificate_sds_secret_configs:
+          - name: server_certificate
+            sds_config:
+              resource_api_version: V3
+              api_config_source:
+                api_type: GRPC
+                transport_api_version: V3
+                grpc_services:
+                  envoy_grpc:
+                    cluster_name: sds_server_mtls
+          validation_context_sds_secret_config:
+          - name: context_validation
+            sds_config:
+...
+   <same as line 12 to 17>
+...
+                    cluster_name: sds_server_uds
+...
+            tls_certificates:
+            - certificate_chain:
+                filename: /path-to/servercert.pem
+              private_key:
+                filename: /path-to/serverkey.pem
+              watched_directory:
+                path: /path-to/

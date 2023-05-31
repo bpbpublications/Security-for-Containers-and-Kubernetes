@@ -1,0 +1,72 @@
+## NON SAFE IMAGE
+docker build --no-cache -t this-is-not-a-safe-image:latest .
+docker images | grep this-is-not-a-safe-image
+docker run -it 5c40b3ccbedc
+ls root/
+mkdir extract-image-folder
+cd extract-image-folder
+docker save this-is-not-a-safe-image -o this-is-not-a-safe-image.tar
+tar xf this-is-not-a-safe-image.tar
+for secret in */layer.tar; do tar -tf $secret | grep the_secret_file && echo $secret; done
+tar xf 59679b05a55027190f7d4e06290c9ab5d63ff34eb62be25f053807eec333acf4/layer.tar root/the_secret_file
+cat root/the_secret_file
+
+## SAFE IMAGE
+DOCKER_BUILDKIT=1 docker build --no-cache -t safe-image:latest --secret id=the_secret_file,src=the_secret_file .
+$ DOCKER_BUILDKIT=1 docker build --no-cache \
+   --secret id=the_secret_file,src=the_secret_file  \
+   -t safe-image:latest .
+docker save safe-image -o safe-image.tar
+tar xf safe-image.tar
+for secret in */layer.tar; do tar -tf $secret | grep credentials && echo $secret; done
+
+## Multi=stage builds
+DOCKER_BUILDKIT=1 docker build --no-cache -t multi-image:development --target development .
+
+## Registry
+# Authentication
+mkdir auth
+docker run --entrypoint htpasswd httpd:2 -Bbn luigi mypassword > auth/htpasswd
+# Create registry container
+docker run -d \
+  -p 5005:5005 \
+  --restart=always \
+  --name my-local-registry \
+  -v "$(pwd)"/auth:/auth \
+  -e REGISTRY_HTTP_ADDR=0.0.0.0:5005 \
+  -e "REGISTRY_AUTH=htpasswd" \
+  -e "REGISTRY_AUTH_HTPASSWD_REALM=Registry Realm" \
+  -e REGISTRY_AUTH_HTPASSWD_PATH=/auth/htpasswd \
+  registry:2
+# Login into the registry
+docker login localhost:5005
+docker pull alpine
+docker tag alpine localhost:5005/my-local-alpine-image
+docker push localhost:5005/my-local-alpine-image
+docker pull localhost:5005/my-local-alpine-image
+
+## Authentication with NGINX
+mkdir -p auth data
+docker run --entrypoint htpasswd httpd:2 -Bbn luigi mypassword > auth/nginx.htpasswd
+cp ../chapter_03/client-cert.pem auth/domain.crt
+cp ../chapter_03/client-key.pem auth/domain.key
+touch auth/nginx.conf
+docker-compose up -d
+# Login into the registry
+docker login -u=luigi -p=mypassword myregistrydomain.com:5043
+docker tag ubuntu myregistrydomain.com:5043/test
+docker push myregistrydomain.com:5043/test
+docker pull myregistrydomain.com:5043/test
+
+## Authentication with TLS
+cp auth/domain.* certs
+docker-compose up -d
+docker tag alpine localhost:443/my-local-alpine-image
+docker push localhost:443/my-local-alpine-image
+
+## DCT
+docker trust key generate luigi
+docker trust signer add --key cert.pem luigi localhost:4443/admin/demo
+docker tag alpine localhost:4443/my-local-alpine-image
+docker push localhost:4443/my-local-alpine-image
+docker trust sign localhost:4443/admin/demo:1

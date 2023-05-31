@@ -1,0 +1,1 @@
+$ helm install –generate-name –keyring ~/.gnupg/secring.gpg –verify chartXYZ-0.1.0.tgz

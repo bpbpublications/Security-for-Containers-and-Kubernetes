@@ -1,0 +1,4 @@
+openssl req \
+  -newkey rsa:4096 -nodes -sha256 -keyout your-dir/domain.key \
+  -addext "subjectAltName = DNS:your-registry.domain.com" \
+  -x509 -days 365 -out your-dir/domain.crt

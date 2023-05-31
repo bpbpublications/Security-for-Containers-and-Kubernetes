@@ -1,0 +1,13 @@
+$ gpg --list-keys
+/Users/luigiaversa/.gnupg/pubring.kbx
+-------------------------------------
+pub   rsa3072 2023-01-06 [SC] [expires: 2025-01-05]
+      0E22EB88E39E12277A7760AE9E439B102CF3C0C6
+uid           [ unknown] Grafana Labs <engineering@grafana.com>
+sub   rsa3072 2023-01-06 [E] [expires: 2025-01-05]
+
+pub   rsa4096 2021-04-19 [SC] [expires: 2026-04-18]
+      C874011F0AB405110D02105534365D9472D7468F
+uid           [ unknown] HashiCorp Security (hashicorp.com/security) <security@hashicorp.com>
+sub   rsa4096 2021-04-21 [S] [expires: 2026-04-20]
+sub   rsa4096 2021-04-19 [E] [expires: 2026-04-18]

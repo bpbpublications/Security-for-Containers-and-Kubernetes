@@ -1,0 +1,10 @@
+rbac:
+  create: true
+Component1:
+  serviceAccount:
+    create: true
+    name: component1
+Component2:
+  serviceAccount:
+    create: true
+    name: component2

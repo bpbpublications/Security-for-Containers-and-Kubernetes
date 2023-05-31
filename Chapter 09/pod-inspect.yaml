@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: seccomp-audit
+  labels:
+    app: seccomp-audit
+spec:
+  securityContext:
+    seccompProfile:
+      type: Localhost
+      localhostProfile: profiles/inspect.json
+  containers:
+  - name: my-audited-container
+    image: hashicorp/http-echo:0.2.3
+    args:
+    - "-text=syscalls executed"
+    securityContext:
+      allowPrivilegeEscalation: false

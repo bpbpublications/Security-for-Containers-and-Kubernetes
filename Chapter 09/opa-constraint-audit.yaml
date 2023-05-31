@@ -1,0 +1,21 @@
+apiVersion: constraints.gatekeeper.sh/v1beta1
+kind: BlockIngressHostSharingAlternativeNamespace
+metadata:
+  name: ingress-conflict
+spec:
+  match:
+    kinds:
+      - apiGroups: [""]
+        kinds: ["ingress"]
+  parameters:
+    labels: ["alt_namespace"]
+status:
+  auditTimestamp: "2023-18-01T06:12:55Z"
+  byPod:
+  - enforced: true
+    id: gatekeeper-controller-manager-0
+  violations:
+  - enforcementAction: deny
+    kind: ingress
+    message: 'Host conflict, the ingress object belongs to a different namespace'
+    name: kube-system

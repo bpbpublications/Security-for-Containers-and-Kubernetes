@@ -1,0 +1,23 @@
+apiVersion: security.istio.io/v1
+kind: AuthorizationPolicy
+metadata:
+ name: http-ingress
+ namespace: my-namespace
+spec:
+ selector:
+   matchLabels:
+     app: http-ingress
+     version: v1
+ action: ALLOW
+ rules:
+ - from:
+   - source:
+       principals: ["cluster.local/ns/default/sa/idle"]
+   - source:
+       namespaces: ["staging"]
+   to:
+   - operation:
+       methods: ["GET"]
+   when:
+   - key: request.auth.claims[iss]
+     values: ["https://accounts.google.com"]

@@ -1,0 +1,11 @@
+...
+    transport_socket:
+      name: envoy.transport_sockets.tls
+      typed_config:
+        "@type": type.googleapis.com/envoy.extensions.transport_sockets.tls.v3.UpstreamTlsContext
+        common_tls_context:
+          validation_context:
+            trusted_ca:
+              filename: /path-to/cacert.pem
+            match_typed_subject_alt_names:
+	            - san_type: DNS

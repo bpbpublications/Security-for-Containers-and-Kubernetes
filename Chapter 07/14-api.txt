@@ -1,0 +1,11 @@
+$ minikube ssh --native-ssh=false -p my-cluster -n my-cluster
+$ sudo cp /etc/kubernetes/manifests/kube-apiserver.yaml .
+$ sudo vi /etc/kubernetes/manifests/kube-apiserver.yaml
+...
+    - --service-cluster-ip-range=10.96.0.0/12
+    - --tls-cert-file=/var/lib/minikube/certs/apiserver.crt
+    - --tls-private-key-file=/var/lib/minikube/certs/apiserver.key
+    - --tls-min-version=VersionTLS13
+    image: registry.k8s.io/kube-apiserver:v1.26.3
+    imagePullPolicy: IfNotPresent
+...

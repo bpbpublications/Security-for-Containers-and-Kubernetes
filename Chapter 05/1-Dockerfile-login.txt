@@ -1,0 +1,10 @@
+login:
+    image: node:slim
+    container_name: login
+    depends_on:
+      - nginx-proxy
+      - letsencrypt
+    environment:
+      - VIRTUAL_HOST=api.mydomain.com
+    networks:
+      - my-reverse_proxy-net

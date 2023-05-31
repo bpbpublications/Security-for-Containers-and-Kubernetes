@@ -1,0 +1,8 @@
+$ kubectl describe pod/{etcd-pod-name} -n kube-system
+$ sudo cat /etc/kubernetes/manifests/etcd.yaml
+    - etcd
+    - --advertise-client-urls=https://192.168.49.2:2379
+    - --cert-file=/var/lib/minikube/certs/etcd/server.crt
+    - --client-cert-auth=true
+    ...
+    - --key-file=/var/lib/minikube/certs/etcd/server.key

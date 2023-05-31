@@ -1,0 +1,8 @@
+. . .
+profile k8s-apparmor-deny-write flags=(attach_disconnected) {
+  # Allow all file read access to the / volume.
+  file,
+  # Deny all file write access to the / volume.
+  deny /** w,
+}
+. . .

@@ -1,0 +1,5 @@
+...
+securityContext:
+  seccompProfile:
+    type: Localhost
+    localhostProfile: profiles-dir/my-seccomp-profile.json

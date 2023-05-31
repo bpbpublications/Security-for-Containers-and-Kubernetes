@@ -1,0 +1,11 @@
+$ curl -o rootless-install.sh -fsSL https://get.docker.com/rootless
+$ sh rootless-install.sh
+# Installing stable version 23.0.4
+# Executing docker rootless install script, commit: 07206cb
+...
+# TLDR OMITTED
+Installed docker.service successfully.
+$ export PATH=$HOME/bin:$PATH
+$ docker context use rootless
+rootless
+Current context is now "rootless"

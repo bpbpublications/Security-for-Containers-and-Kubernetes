@@ -1,0 +1,4 @@
+k8s-grafana-template.yaml (kubernetes)
+======================================
+Tests: 165 (SUCCESSES: 141, FAILURES: 24, EXCEPTIONS: 0)
+Failures: 24 (UNKNOWN: 0, LOW: 20, MEDIUM: 4, HIGH: 0, CRITICAL: 0)

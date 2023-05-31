@@ -1,0 +1,1 @@
+docker run -it -d --cpus=2 -m 1024m --memory-reservation=256m --name my-ubuntu ubuntu:22.04

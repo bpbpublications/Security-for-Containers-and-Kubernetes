@@ -1,0 +1,4 @@
+        common_tls_context:
+          tls_certificates:
+          - certificate_chain:
+              filename: /path-to/clientcert.pem

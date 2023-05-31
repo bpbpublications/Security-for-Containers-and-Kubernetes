@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: disable-cross-namespace-affinity
+  namespace: my-namespace
+spec:
+  hard:
+    pods: "0"
+  scopeSelector:
+    matchExpressions:
+    - scopeName: CrossNamespacePodAffinity
+      operator: Exists

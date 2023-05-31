@@ -1,0 +1,15 @@
+$ cat <<EOF | sudo tee pod-conf.json
+{
+    "metadata": {
+        "name": "nginx-sandbox",
+        "namespace": "default",
+        "attempt": 1,
+        "uid": " 1000"
+    },
+    "log_directory": "/tmp",
+    "linux": {
+    }
+}
+EOF
+$ crictl runp pod-conf.json
+3933c51901c112ef7d4162e25e7e4726869436779f06c40fa24c833153840de5

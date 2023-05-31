@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: security-context-capability
+spec:
+  containers:
+  - name: sec-ctx- capability
+    image: my-image:1.0
+    securityContext:
+      capabilities:
+        add: ["SYS_ADMIN", "SYS_TIME"]

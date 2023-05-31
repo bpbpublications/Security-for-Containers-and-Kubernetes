@@ -1,0 +1,10 @@
+$ sudo crictl ps
+CONTAINER      STATE     NAME                    POD ID
+f6f5eb3476c0e  Running   storage-provisioner     1d1a2ec2067d7
+1f8124d86b411  Running   kindnet-cni             325ce54832c28
+79c45d5df013e  Running   coredns                 83d3bb1604446
+ba894af13ddfc  Running   kube-proxy              8d85fa2fdc44e
+ec7e1e508328b  Running   kube-controller-manager d0d68bdcd08ab
+b1b5832cfc814  Running   kube-apiserver          aec8a1424cc81
+ad0a7f5df8f4d  Running   etcd                    d6988a3b45379
+c60e52371559b  Running   kube-scheduler          40148808c32ea

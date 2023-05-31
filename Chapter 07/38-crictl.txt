@@ -1,0 +1,2 @@
+$ sudo crictl run container-conf.json pod-conf.json
+cfc5f9157892481c5fd5df0646813fee6df97c401342f2540a3c11418d11c2bb

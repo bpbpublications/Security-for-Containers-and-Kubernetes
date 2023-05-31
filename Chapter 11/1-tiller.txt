@@ -1,0 +1,9 @@
+$ helm init \
+--override 'spec.template.spec.containers[0].command'='{/tiller,--storage=secret}' \
+--service-account=helm-service-account \
+–storage=secret \
+--tls-ca-cert=ca.pem \
+--tiller-tls \
+--tiller-tls-verify \
+--tiller-tls-key=key.pem \
+--tiller-tls-cert=cert.pem

@@ -1,0 +1,1 @@
+$ gpg --output hashicorp.gpg --export c874011f0ab405110d02105534365d9472d7468f

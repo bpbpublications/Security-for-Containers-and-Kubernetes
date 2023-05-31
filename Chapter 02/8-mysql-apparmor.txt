@@ -1,0 +1,38 @@
+# vim:syntax=apparmor
+#include <tunables/global>
+
+/usr/sbin/mysqld {
+  #include <abstractions/base>
+  #include <abstractions/nameservice>
+  #include <abstractions/user-tmp>
+  #include <abstractions/mysql>
+  #include <abstractions/winbind>
+
+# Allow system resource access
+  /sys/devices/system/cpu/ r,
+  capability sys_resource,
+  capability dac_override,
+  capability setuid,
+  capability setgid,
+
+# Allow network access
+  network tcp,
+
+  /etc/hosts.allow r,
+  /etc/hosts.deny r,
+
+# Allow config access
+  /etc/mysql/** r,
+
+# Allow pid, socket, socket lock file access
+  /var/run/mysqld/mysqld.pid rw,
+  /var/run/mysqld/mysqld.sock rw,
+  /var/run/mysqld/mysqld.sock.lock rw,
+  /run/mysqld/mysqld.pid rw,
+  /run/mysqld/mysqld.sock rw,
+  /run/mysqld/mysqld.sock.lock rw,
+
+# Allow execution of server binary
+  /usr/sbin/mysqld mr,
+  /usr/sbin/mysqld-debug mr,
+}

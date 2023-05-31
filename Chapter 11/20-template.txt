@@ -1,0 +1,1 @@
+$ helm template hashicorp/vault -f export-vault-values.yaml > k8s-vault-template.yaml

@@ -1,0 +1,4 @@
+$ minikube node list -p my-cluster
+my-cluster 192.168.49.2
+my-cluster-m02 192.168.49.3
+$ minikube ssh --native-ssh=false -p my-cluster -n my-cluster

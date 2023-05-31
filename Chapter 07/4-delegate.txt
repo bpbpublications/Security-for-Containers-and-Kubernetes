@@ -1,0 +1,6 @@
+$ sudo mkdir -p /etc/systemd/system/user@.service.d
+$ touch /etc/systemd/system/user@.service.d/delegate.conf
+# Add the following lines to the delegate.conf file
+[Service]
+Delegate=cpu cpuset io memory pids
+$ sudo systemctl daemon-reload

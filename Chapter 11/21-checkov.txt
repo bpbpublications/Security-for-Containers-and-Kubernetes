@@ -1,0 +1,1 @@
+$ checkov -f k8s-vault-template.yaml --framework kubernetes --quiet --skip-check CKV_K8S_21 > checkov-vault-scan

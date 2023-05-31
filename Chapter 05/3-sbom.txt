@@ -1,0 +1,14 @@
+$ docker sbom neo4j:4.4.4
+Syft v0.42.0
+ ✔ Loaded image
+ ✔ Parsed image
+ ✔ Cataloged packages      [348 packages]
+
+NAME                      VERSION                        TYPE
+...
+bsdutils                  1:2.36.1-8+deb11u1             deb
+ca-certificates           20220614                       deb
+...
+log4j-api                 2.17.0                         java-archive 
+log4j-core                2.17.0                         java-archive 
+...

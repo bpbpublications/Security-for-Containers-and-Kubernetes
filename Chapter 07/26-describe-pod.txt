@@ -1,0 +1,1 @@
+$ kubectl describe pod/{kube-scheduler-pod-name} -n kube-system

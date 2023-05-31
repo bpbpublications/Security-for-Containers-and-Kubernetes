@@ -1,0 +1,6 @@
+$ sudo crictl exec -i ad0a7f5df8f4d etcdctl \
+--cacert=/var/lib/minikube/certs/etcd/ca.crt \
+--cert=/var/lib/minikube/certs/etcd/server.crt \
+--key=/var/lib/minikube/certs/etcd/server.key \
+get /registry/secrets/default/test-secret
+k8s:enc:aescbc:v1:key1:xc #NOT READABLE CHARACTERS

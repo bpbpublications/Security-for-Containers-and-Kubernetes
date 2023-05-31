@@ -1,0 +1,15 @@
+$ kubectl -n kube-system create secret tls mysecret --key key.pem --cert cert.pem
+secret/mysecret created
+$ minikube addons configure ingress -p my-cluster
+-- Enter custom cert (format is "namespace/secret"): secret/mysecret
+✅  ingress was successfully configured
+$ minikube addons enable ingress -p my-cluster
+💡  ingress is an addon maintained by Kubernetes. For any concerns contact minikube on GitHub.
+You can view the list of minikube maintainers at: https://github.com/kubernetes/minikube/blob/master/OWNERS
+    ▪ Using image registry.k8s.io/ingress-nginx/kube-webhook-certgen:v20230312-helm-chart-4.5.2-28-g66a760794
+    ▪ Using image registry.k8s.io/ingress-nginx/kube-webhook-certgen:v20230312-helm-chart-4.5.2-28-g66a760794
+    ▪ Using image registry.k8s.io/ingress-nginx/controller:v1.7.0
+🔎  Verifying ingress addon...
+🌟  The 'ingress' addon is enabled
+$ kubectl -n ingress-nginx get deployment ingress-nginx-controller -o yaml | grep mysecret
+- --default-ssl-certificate=secret/mysecret

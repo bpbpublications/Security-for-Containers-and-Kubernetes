@@ -1,0 +1,3 @@
+$ gpg --output previous-key.gpg --export 0E22EB88E39E12277A7760AE9E439B102CF3C0C6
+File 'previous-key.gpg' exists. Overwrite? (y/N) N
+Enter new filename: grafana.gpg

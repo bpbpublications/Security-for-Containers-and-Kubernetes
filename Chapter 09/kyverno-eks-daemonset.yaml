@@ -1,0 +1,23 @@
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: enforce-aws-node-irsa    
+spec:
+  validationFailureAction: enforce
+  background: true
+  rules:
+  - name: validate-aws-node-daemonset-irsa
+    match:
+      any:
+      - resources:
+          kinds:
+          - DaemonSet
+          names: 
+          - aws-node
+          namespaces:
+          - kube-system
+    validate:
+      message: "Enforce aws-node daemonset to use IRSA."
+      pattern:
+        spec:
+          serviceAccountName: "!aws-node"

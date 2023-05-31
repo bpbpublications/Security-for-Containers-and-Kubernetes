@@ -1,0 +1,10 @@
+resource "helm_release" "vault" {
+  name             = "vault"
+  create_namespace = true
+  namespace        = "the-assigned-namespace"
+  repository       = "https://helm.releases.hashicorp.com"
+  chart            = "vault"
+  version          = "0.23.0"
+  verify           = true
+  keyring          = "hashicorp.gpg"
+}

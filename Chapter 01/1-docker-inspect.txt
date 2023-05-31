@@ -1,0 +1,6 @@
+"RootFS": {
+    "Type": "layers",
+    "Layers": [
+        "sha256:49c23cd3c582026251e2ee4adde9217329f67aef230298174123b92a7a005395"
+    ]
+}

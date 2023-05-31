@@ -1,0 +1,22 @@
+Hash: SHA512
+
+apiVersion: v2
+appVersion: "0.21.1"
+description: CHartXYZ
+name: chartXYZ
+type: application
+version: 0.1.0
+
+...
+files:
+  chartXYZ-0.1.0.tgz: sha256:jjggj39g9935fggpge98g095g9ug3g09ugu3fgug9u0gu05ug8u5u530u8035u08
+-----BEGIN PGP SIGNATURE-----
+
+goepjrog££$rref;e;kkb[teyhpo4oy-6{[6-hhl[h[pkht6hkthrbbk0kkkk/Kd
+nvHFBNps7hXqSocsg0a9Fi1LRAc3OpVh3knjPfHNGOy8+xOdhbqpdnB+5ty8YopI
+mYMWp6cP/Mwpkt7//wTIaLKiWkv2rSfty4yZUs7DJcYB8Udi1prnWf8fgfer658k
+pkht6hkthrbbk0kkkk/gP1ecWFMenvHFBNps7hXqSocsg0a9R/c3OpVh3knjPfHN
+vicbaFH5AmJCBihBaKJE4R1IX49/+JojnOLIhI3Psd0HBD2bTlsm/rSfty4yZUsD
+nvHFBNps7hXqSocsg0a9Vh3knjPfHNGOy8+u9/eyLR0+JcYB8Udi1prnWf8=jtrt
+=bfds
+-----END PGP SIGNATURE-----

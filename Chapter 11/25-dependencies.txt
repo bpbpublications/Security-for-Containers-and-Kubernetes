@@ -1,0 +1,11 @@
+dependencies:
+– name: alertmanager
+  version: 0.24.*
+  repository: https://prometheus-community.github.io/helm-charts
+– name: kube-state-metrics
+  version: 4.24.*
+  repository: https://prometheus-community.github.io/helm-charts
+– name:  rometheus-node-exporter
+  version: 4.8.*
+  repository: https://prometheus-community.github.io/helm-charts
+  version: 4.8.*

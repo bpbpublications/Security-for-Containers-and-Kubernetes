@@ -1,0 +1,32 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Sid": "EnableSSMRunCommand",
+        "Effect": "Allow",
+        "Action": [
+          "ec2messages:AcknowledgeMessage",
+          "ec2messages:DeleteMessage",
+          "ec2messages:FailMessage",
+          "ec2messages:GetEndpoint",
+          "ec2messages:GetMessages",
+          "ec2messages:SendReply",
+          "ssm:UpdateInstanceInformation"
+        ],
+        "Resource": "*"
+      },
+      {
+        "Sid": "EnableAccessViaSSMSessionManager",
+        "Effect": "Allow",
+        "Action": [
+          "ssmmessages:CreateControlChannel",
+          "ssmmessages:CreateDataChannel",
+          "ssmmessages:OpenControlChannel",
+          "ssmmessages:OpenDataChannel",
+          "ssm:UpdateInstanceInformation"
+        ],
+        "Resource": "*"
+      }
+    ]
+  }
+  

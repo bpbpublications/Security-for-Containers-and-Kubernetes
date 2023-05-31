@@ -1,0 +1,17 @@
+    - --tls-min-version=VersionTLS13
+    - --encryption-provider-config=/etc/kubernetes/enc/enc.yaml
+    image: registry.k8s.io/kube-apiserver:v1.26.3
+    imagePullPolicy: IfNotPresent
+...
+    volumeMounts:
+...
+    - mountPath: /etc/kubernetes/enc
+      name: enc
+      readOnly: true
+...
+  volumes:
+...
+  - hostPath:
+      path: /etc/kubernetes/enc
+      type: DirectoryOrCreate
+    name: enc

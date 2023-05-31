@@ -1,0 +1,6 @@
+$ helm inspect values grafana/grafana > export-grafana-values.yaml
+$ helm template grafana/grafana \
+   -f export-grafana-values.yaml > k8s-grafana-template.yaml
+$ trivy config k8s-grafana-template.yaml > trivy-grafana-scan
+2023-05-05T19:31:35.564+0100 INFO Misconfiguration scanning is enabled
+2023-05-05T19:31:36.761+0100 INFO Detected config files: 1

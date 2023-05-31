@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Secret
+type: Opaque
+metadata:
+  name: my-key-pair
+  namespace: default
+  annotations:
+    kpack.io/cosign.docker-media-types: "1"
+data:
+  cosign.key: <insert the content of the private key>
+  cosign.password: <password used to generate the key>
+  cosign.pub: < insert the content of the public key>

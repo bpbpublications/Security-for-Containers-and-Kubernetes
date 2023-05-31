@@ -1,0 +1,2 @@
+$ helm repo add hashicorp https://helm.releases.hashicorp.com
+$ helm inspect values hashicorp/vault > export-vault-values.yaml

@@ -1,0 +1,14 @@
+apiVersion: kpack.io/v1alpha2
+kind: Image
+metadata:
+  name: my-signed-image
+  namespace: default
+spec:
+  tag: <image tag>
+  serviceAccountName: signed-service-account
+  builder:
+    name: my-builder
+    kind: Builder
+  source:
+    registry:
+      image: “source-image”

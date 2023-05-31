@@ -1,0 +1,8 @@
+$ helm repo add hashicorp https://helm.releases.hashicorp.com
+"hashicorp" has been added to your repositories
+$ helm search repo hashicorp
+NAME                CHART VERSION APP VERSION DESCRIPTION
+hashicorp/consul    1.0.4         1.14.4      Official HashiCorp Consul Chart
+hashicorp/terraform 1.1.2                     Install and configure Terraform Cloud Operator ...
+hashicorp/vault     0.23.0        1.12.1      Official HashiCorp Vault Chart
+hashicorp/waypoint  0.1.17        0.10.5      Official Helm Chart for HashiCorp Waypoint

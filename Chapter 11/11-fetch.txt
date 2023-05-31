@@ -1,0 +1,2 @@
+$ helm fetch --verify grafana/grafana --version 6.50.7 --keyring grafana.gpg
+Error: failed to fetch provenance "https://github.com/grafana/helm-charts/releases/download/grafana-6.50.7/grafana-6.50.7.tgz.prov"

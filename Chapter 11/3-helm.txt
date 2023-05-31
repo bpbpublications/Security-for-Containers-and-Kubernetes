@@ -1,0 +1,1 @@
+$ helm package --sign --key 'Luigi Aversa' --keyring ~/.gnupg/secring.gpg chartXYZ

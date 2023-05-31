@@ -1,0 +1,30 @@
+apiVersion: gatekeeper.sh/v1beta1
+kind: ConstraintTemplate
+metadata:
+  name: blockingresshostsharingalternativenamespace
+spec:
+  crd:
+    spec:
+      names:
+        kind: BlockIngressHostSharingAlternativeNamespace
+      validation:
+        openAPIV3Schema:
+          properties:
+            labels:
+              type: array
+              items: string
+  targets:
+    - target: admission.k8s.gatekeeper.sh
+      rego: |
+        package kubernetes.admission
+        import data.kubernetes.ingresses
+        deny[msg] {
+            some alt_namespace, alt_ingresses
+            input.request.kind.kind == "Ingress"
+            input.request.operation == ["CREATE", "UPDATE"]
+            host := input.request.object.spec.rules[_].host
+            ingress := ingresses[alt_namespace][alt_ingresses]
+            alt_namespace != input.request.namespace
+            ingress.spec.rules[_].host == host
+            msg := sprintf("Host %q conflict! The ingress object belongs to a different namespace", [host, alt_namespace, alt_ingresses])
+        }

@@ -1,0 +1,4 @@
+# syntax=docker/dockerfile:1
+FROM ubuntu:22.04
+COPY the_secret_file /root/the_secret_file
+RUN rm /root/the_secret_file

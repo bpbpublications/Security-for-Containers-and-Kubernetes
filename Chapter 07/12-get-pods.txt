@@ -1,0 +1,5 @@
+$ kubectl get pods -n kube-system | grep api
+kube-apiserver-my-cluster            1/1     Running   1 (11h ago)   23h
+$ kubectl describe pod/kube-apiserver-my-cluster -n kube-system | grep tls
+      --tls-cert-file=/var/lib/minikube/certs/apiserver.crt
+      --tls-private-key-file=/var/lib/minikube/certs/apiserver.key

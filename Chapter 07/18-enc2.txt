@@ -1,0 +1,22 @@
+$ minikube ssh --native-ssh=false -p my-cluster -n my-cluster
+Last login: Tue Apr 25 22:56:09 2023 from 192.168.49.1
+docker@my-cluster:$ head -c 32 /dev/urandom | base64
+JuF9H4fz5CvAbu/oD/O+OUl9ZnDthRTHRQ16OSKLeP0=
+docker@my-cluster:$ sudo mkdir -p /etc/kubernetes/enc
+docker@my-cluster:$ cat <<EOF | sudo tee /etc/kubernetes/enc/enc.yaml
+apiVersion: apiserver.config.k8s.io/v1
+kind: EncryptionConfiguration
+resources:
+  - resources:
+      - secrets
+      - configmaps
+      - pandas.awesome.bears.example
+    providers:
+      - aescbc:
+          keys:
+            - name: key1
+              secret: JuF9H4fz5CvAbu/oD/O+OUl9ZnDthRTHRQ16OSKLeP0=
+      - identity: {}
+EOF
+docker@my-cluster:$ exit
+logout

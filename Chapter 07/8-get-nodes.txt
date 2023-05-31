@@ -1,0 +1,4 @@
+$ kubectl get nodes -o wide
+NAME           STATUS  ROLES           AGE    VERSION  INTERNAL-IP   EXTERNAL-IP
+my-cluster     Ready   control-plane   5m33s  v1.26.3  192.168.49.2  <none>
+my-cluster-m02 Ready   <none>          4m48s  v1.26.3  192.168.49.3  <none>

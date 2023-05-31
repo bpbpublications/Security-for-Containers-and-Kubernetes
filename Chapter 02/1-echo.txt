@@ -1,0 +1,3 @@
+echo 2-4 > cpuset.cpus
+echo 2 > cpuset.mems
+echo $$ > tasks

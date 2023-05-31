@@ -1,0 +1,19 @@
+MEDIUM: Container 'grafana' of Deployment 'release-name-grafana' should set 'securityContext.allowPrivilegeEscalation' to false
+═══════════════════════════════════════════════════════════════════════
+A program inside the container can elevate its own privileges and run as root, which might give the program control over the container and node.
+
+See https://avd.aquasec.com/misconfig/ksv001
+───────────────────────────────────────────────────────────────────────
+ k8s-grafana-template.yaml:197-249
+───────────────────────────────────────────────────────────────────────
+ 197 ┌         - name: grafana
+ 198 │           image: "grafana/grafana:9.3.6"
+ 199 │           imagePullPolicy: IfNotPresent
+ 200 │           volumeMounts:
+ 201 │             - name: config
+ 202 │               mountPath: "/etc/grafana/grafana.ini"
+ 203 │               subPath: grafana.ini
+ 204 │             - name: storage
+ 205 └               mountPath: "/var/lib/grafana"
+ ...  
+───────────────────────────────────────────────────────────────────────

@@ -1,0 +1,2 @@
+$ minikube ssh --native-ssh=false -p my-cluster -n my-cluster-m02
+Last login: Sun Apr 23 23:56:27 2023 from 192.168.49.1

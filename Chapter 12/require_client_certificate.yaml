@@ -1,0 +1,11 @@
+      transport_socket:
+...
+          require_client_certificate: true
+          common_tls_context:
+            validation_context:
+              trusted_ca:
+                filename: /path-to/cacert.pem
+              match_typed_subject_alt_names:
+              - san_type: DNS
+                matcher:
+                  exact: user-account.mydomain.com

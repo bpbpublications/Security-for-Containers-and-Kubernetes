@@ -1,0 +1,17 @@
+$ sudo apparmor_status
+apparmor module is loaded.
+6 profiles are loaded.
+6 profiles are in enforce mode.
+   /sbin/dhclient
+   /usr/lib/NetworkManager/nm-dhcp-client.action
+   /usr/sbin/httpd
+   /usr/sbin/mysqld
+   /usr/sbin/tcpdump
+0 profiles are in complain mode.
+3 processes have profiles defined.
+3 processes are in enforce mode.
+   /sbin/dhclient (352)
+   /usr/sbin/httpd (842)
+   /usr/sbin/mysqld (499)
+0 processes are in complain mode.
+0 processes are unconfined but have a profile defined.

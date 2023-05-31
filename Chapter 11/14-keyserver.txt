@@ -1,0 +1,5 @@
+$ gpg --keyserver keyserver.ubuntu.com \
+--recv-keys c874011f0ab405110d02105534365d9472d7468f
+   gpg: key 34365D9472D7468F: public key "HashiCorp Security   (hashicorp.com/security) <security@hashicorp.com>" imported
+   gpg: Total number processed: 1
+   gpg:               imported: 1

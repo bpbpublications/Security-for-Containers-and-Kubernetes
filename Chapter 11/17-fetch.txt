@@ -1,0 +1,4 @@
+$ helm fetch --verify hashicorp/terraform --version 1.1.2 --keyring hashicorp.gpg
+Signed by: HashiCorp Security (hashicorp.com/security) <security@hashicorp.com>
+Using Key With Fingerprint: C874011F0AB405110D02105534365D9472D7468F
+Chart Hash Verified: sha256:9115fecf667f3d41a5a1c5833de948ef699321a6165be7bebe4976a7279702d5
